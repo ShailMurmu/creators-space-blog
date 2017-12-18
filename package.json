@@ -1,0 +1,22 @@
+{
+  "name": "webdev",
+  "version": "1.0.0",
+  "description": "Blogging server",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shailendra_Ankit",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.16.2",
+    "hbs": "^4.0.1",
+    "jsonwebtoken": "^8.1.0",
+    "lodash": "^4.17.4",
+    "mongoose": "^4.13.7",
+    "request": "^2.83.0",
+    "socket.io": "^2.0.4",
+    "validator": "^9.2.0"
+  }
+}
