@@ -1,60 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="public/bootstrap-3.3.7/dist/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="public/bootstrap-3.3.7/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style/index-style.css">
-  <link rel="stylesheet" href="public/font-awesome-4.7.0/css/font-awesome.css">
+  <link rel="stylesheet" href="./public/bootstrap-3.3.7/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="./public/bootstrap-3.3.7/dist/css/bootstrap.min.css">
+
+  <!-- <link rel="stylesheet" href="public/bootstrap-4.0.0-beta.2-dist/css/bootstrap.min.css"> -->
+  <!-- <link rel="stylesheet" href="public/bootstrap-4.0.0-beta.2-dist/css/bootstrap-grid.min.css"> -->
+  <link rel="stylesheet" href="./style/index-style.css">
+  <link rel="stylesheet" href="./public/font-awesome-4.7.0/css/font-awesome.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <title>Home</title>
 </head>
+
 <body>
-<!-- <header class="home-section">
+  <!-- <header class="home-section">
   <div class="overlay">
 
 </div>
 </header> -->
 
-<div class="container-fluid" id="home-section">
-  <div class="row" id="overlay">
-    <div class="col-xs-12">
-      <div class="row" id="home-qoutes">
-        <h1 class="display">Start to <strong>explore</strong> the world now</h1>
-      </div>
-      <div class="row" id="home-btn">
+  <div class="container-fluid" id="home-section">
+    <div class="row" id="overlay">
+      <div class="col-sm-12">
+        <div class="row" id="home-qoutes">
+          <h1 class="display">Start to <strong>explore</strong> the world now</h1>
+        </div>
+        <div class="row" id="home-btn">
           <a href="#" id="btn1">About</a>
-          <a href="#" id="btn2">Explore More</a>
+          <a href="#signup-innerId" id="btn2">Explore More</a>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<nav class="navbar navbar-float">
-        <div class="container">
+  <!-- Second navbar for sign in -->
+  <nav class="navbar navbar-default navbar-float" id="navigate">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-2">
+   <span class="sr-only">Toggle navigation</span>
+   <span class="icon-bar"></span>
+   <span class="icon-bar"></span>
+   <span class="icon-bar"></span>
+ </button>
+        <a class="navbar-brand" href="#home-section">Creators Space</a>
+      </div>
 
-            <a href="#" class="navbar-brand">CreaterSpace</a>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="navbar-collapse-2">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#home-section">Home</a></li>
+          <li><a href="#developerId">Contact us</a></li>
+          <li><a href="#signup-innerId">Sign up</a></li>
+          <li>
+            <label id="signinBtn" class="btn btn-default btn-outline btn-circle" data-toggle="modal" data-target="#exampleModal" href="">Sign in</label>
+          </li>
+        </ul>
+        <!-- Button trigger modal -->
+        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+Launch demo modal
+</button> -->
 
-            <button class="navbar-toggle" data-toggle="collapse" data-target=".navhead">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel">Creators Space</h3>
+                <button type="button" class="close" id="closeBtn" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+              </div>
+              <div id="login-form">
+                <form class="navbar-form navbar-center form-inline" id="login-elem" align="center" role="form">
+                  <div class="form-group">
+                    <label class="sr-only" for="Email">Email</label>
+                    <input type="email" class="form-control" id="Email" placeholder="Email" autofocus required>
+                  </div>
+                  <div class="form-group">
+                    <label class="sr-only" for="Password">Password</label>
+                    <input type="password" class="form-control" id="Password" placeholder="Password" required>
+                  </div>
+                  <button type="submit" class="btn btn-success">Sign in</button>
+                </form>
+              </div>
 
-            <div class="collapse navbar-collapse navhead ">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">Activity</a></li>
-                    <li><a href="#">SignUp</a></li>
-                    <li><a href="#">Login</a></li>
-                </ul>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
             </div>
+          </div>
         </div>
-    </nav>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
+  </nav>
+  <!-- /.navbar -->
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+  <div class="signup-inner" id="signup-innerId">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8" id="signup8">
+          <h1 class="display-4">Creators Space provide you freedom to <strong>explore</strong> and break the boundaries between <strong>people</strong></h1>
+          <div class="d-flex flex-row fixmarg">
+            <div class="p-4">
+              <i class="fa fa-check"></i>
+            </div>
+            <div class="p-4">
+              Write Blog about your ideas, innovation and creativity
+            </div>
+          </div>
+          <div class="d-flex flex-row fixmarg">
+            <div class="p-4">
+              <i class="fa fa-check"></i>
+            </div>
+            <div class="p-4">
+              Simple, Robust and fast
+            </div>
+          </div>
+          <div class="d-flex flex-row fixmarg">
+            <div class="p-4">
+              <i class="fa fa-check"></i>
+            </div>
+            <div class="p-4">
+              24x7 Customer Support
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+
+
+          <h3 class="text-center"><strong>Sign up here</strong></h3>
+
+          <p>
+            <h4 class="text-center">Fill out this form to register</h4></p>
+
+          <form action="" id="form-box">
+            <div class="form-group">
+              <input type="text" class="form-control form-control-lg" placeholder="First Name">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control form-control-lg" placeholder="Last Name">
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control form-control-lg" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control form-control-lg" placeholder="Username">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control form-control-lg" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control form-control-lg" placeholder="Confirm Password">
+            </div>
+            <div class="form-group">
+              <button type="submit" id="submit-box" class="btn btn-primary btn-lg btn-block ">Submit</button>
+            </div>
+            <div class="form-group">
+              <h5>Already a user? <a data-toggle="modal" data-target="#exampleModal" href="" id="alreadyUser">Login</a></h5>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="developer" id="developerId">
+    <h5 class="text-center"><b>OUR TEAM</b></h5>
+    <h3 class="text-center" id="cc">MEET OUR <b>TEAM</b></h3>
+    <p class="text-center contct">Here is the awesome team who made this site possible..please feel free contact us for any suggestions or queries</p>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="imageBox">
+            <img src="public/img/IMG_0066v1.jpg" alt="ankitpic" class="img-responsive fiximg">
+            <h3 class="text-center" id="imgh">Ankit Kumar Himansu</h3>
+            <h4 class="text-center descript">
+                           Hardcore fan of cartoon, always dream about food so goes with a name PANDA. He always pretends to be a guy with foreign identity and accidentaly born in India.
+                      </h4>
+            <ul class="mainnav">
+              <li><a href="#" id="a1"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+              <li><a href="#" id="a2"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+              <li><a href="#" id="a3"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="imageBox">
+            <img src="public/img/IMG_9987.JPG" alt="ankitpic" class="img-responsive fiximg">
+            <h3 class="text-center" id="imgh">Shailendra Kumar Murmu</h3>
+            <h4 class="text-center descript">
+                          Loves korean movie, tatti jokes maarne waala and socializes in all circumstances and always try out new things(just kidding..i just sit and fap)
+                      </h4>
+            <ul class="mainnav">
+              <li><a href="#" id="a1"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+              <li><a href="#" id="a2"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+              <li><a href="#" id="a3"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer id="myFooter">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4 myCols">
+          <h5>Get started</h5>
+          <ul class="footlist">
+            <li><a href="#home-section">Home</a></li>
+            <li><a href="#signup-innerId">Sign up</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-4 social-networks">
+          <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+          <a href="#" class="facebook"><i class="fa fa-facebook-official"></i></a>
+          <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+        </div>
+        <div class="col-sm-4 myCols">
+          <h5>About us</h5>
+          <ul class="footlist">
+            <li><a href="public/companyinformation.html">Company Information</a></li>
+            <li><a href="#">Contact us</a></li>
+          </ul>
+        </div>
+
+
+      </div>
+    </div>
+
+    <div class="footer-copyright">
+      <p>© 2016 Copyright CreatorSpace </p>
+    </div>
+  </footer>
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
+
 </html>
