@@ -374,3 +374,12 @@
 #closeBtn {
   margin-top: -40px;
 }
+
+/* DATE 20/12/2017 1:20 AM */
+#mismatch{
+  text-align: center;
+  color: #E34234;
+  padding-top: 20px;
+  font-size: 11px;
+  font-family: Arial;
+}
