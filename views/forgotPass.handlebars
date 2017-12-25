@@ -2,7 +2,6 @@
   <script src="/socket.io/socket.io.js"></script>
   <script type="text/javascript" async>
   var socket = io();
-
   function checkUnique1() {
     var ok = true;
     socket.emit('eCheck', {email: document.getElementsByName("email")[0].value});

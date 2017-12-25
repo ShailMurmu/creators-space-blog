@@ -106,6 +106,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // ==================================================================================================================================================
 // ROUTES
 
+app.get('/companyinformation', (req, res) => {
+  res.render('companyinformation');
+});
 
 app.get('/test0', (req, res) => {
   res.render('test0');

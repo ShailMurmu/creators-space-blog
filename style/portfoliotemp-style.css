@@ -4,12 +4,9 @@
 {
     padding: 10px;
     transition: all 0.5s;
-    
+
 }
-.fiximg:hover
-{
-   
-}
+
 /*
 .col-sm-8
 {
@@ -26,10 +23,10 @@
     /*    border: 0.1px solid blue;*/
     /*   box-shadow: 0 10px 6px -6px #777;*/
     /*    border-radius: 2px;*/
-    
+
     -webkit-box-shadow: 0px 3px 8px rgb(100, 100, 100);
     box-shadow: 0px 3px 8px rgb(100, 100, 100);
-    
+
 }
 .fa
 {
@@ -48,14 +45,14 @@
     background-color: limegreen;
     margin-top: 5px;
     margin-bottom: 10px;
-    
-    
+
+
 }
 /*for limiting the dimensions of image tinymce*/
 
 #my_id img
 {
-     
+
    max-width: 1000px;
     height: auto !important;
     display: inline-block !important;
@@ -72,12 +69,12 @@
 .bold
 {
     font-weight: bold;
-    
+
 }
 /*footer*/
 
 /*footer*/
-/*for proper rendering of 
+/*for proper rendering of
 
 <figure class="image">
 <img src="url" alt="" />
@@ -108,6 +105,3 @@ figure.image figcaption {
     margin: 6px 8px 6px 8px;
     text-align: center;
 }
-
-
-
