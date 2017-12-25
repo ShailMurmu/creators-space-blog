@@ -105,13 +105,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // ==================================================================================================================================================
 // ROUTES
+
+
 app.get('/test0', (req, res) => {
   res.render('test0');
-});
-
-app.route('/portfolio').get(async (req,res) =>
-{
-  res.render('portfolio');
 });
 
 app.get('/test1', (req, res) => {
