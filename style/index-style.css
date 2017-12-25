@@ -376,10 +376,29 @@
 }
 
 /* DATE 20/12/2017 1:20 AM */
-#mismatch{
+#mismatch,#emailExist,#usernameExist{
   text-align: center;
   color: #E34234;
   padding-top: 20px;
   font-size: 11px;
   font-family: Arial;
 }
+
+
+
+/* DATE 22/12/2017 2:01 PM */
+
+#LoginErr{
+  text-align: left;
+  margin-right: 70%;
+}
+
+.footPos{
+  margin-top: 30%;
+}
+
+/* Modal phone click problem */
+
+/* .modal.fade.in{
+  top: 5%;
+} */

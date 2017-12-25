@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Blog home page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./public/bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="./public/bower_components/bootstrap/dist/css/bootstrap.min.css">
+
+  <!-- <link rel="stylesheet" href="public/bootstrap-4.0.0-beta.2-dist/css/bootstrap.min.css"> -->
+  <!-- <link rel="stylesheet" href="public/bootstrap-4.0.0-beta.2-dist/css/bootstrap-grid.min.css"> -->
+  <link rel="stylesheet" href="./style/index-style.css">
+  <link rel="stylesheet" href="./public/font-awesome-4.7.0/css/font-awesome.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <title>forgot Password Page</title>
 </head>
 <body>
-    Welcome to blog home page...<br>
-    <form  method="post" action="/test1" id="tt">
-      Input: <input type="text" name="inp" id="inp1"><br>
-      <button type="submit">Submit</button>
-    </form>
+  <div class="container">
+  <h1>Creators Space<br></h1>
+  <div class="row">
+  <form class="form-inline" id="forgotPassPage">
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" required autofocus>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  </div>
+</div>
+
 </body>
 </html>
