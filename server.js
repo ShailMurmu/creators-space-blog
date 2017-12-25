@@ -115,6 +115,16 @@ app.get('/test1', (req, res) => {
   res.sendFile(path.join(__dirname, '/public/test.html'));
 });
 
+app.get('/portfolio',(req, res) =>
+{
+  res.render('portfolio');
+});
+
+app.get('/companyinformation',(req, res) =>
+{
+  res.render('companyinformation');
+});
+
 app.route('/forgotPass').get(async (req, res) => {
   res.render('forgotPass');
 }).post(async (req, res) => {
