@@ -21,6 +21,7 @@ var userSchema = mongoose.Schema({
     trim: true,
     unique: true,
     validate: {
+      isAsync: false,
       validator: validator.isEmail,
       message: '{VALUE} is not valid email'
     }
@@ -39,4 +40,4 @@ var userSchema = mongoose.Schema({
   }
 });
 
-const Users = module.exports = mongoose.model('Users',userSchema);
+var Users =module.exports = mongoose.model('Users', userSchema);
