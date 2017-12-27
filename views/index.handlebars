@@ -140,12 +140,12 @@ function emailRSet() {
 </button>
         </div>
         <div id="login-form">
-          <form class="navbar-form navbar-center form-inline" id="login-elem" align="center" role="form">
+          <form class="navbar-form navbar-center form-inline" id="login-elem" action="/login" method="post" align="center" role="form">
             <div class="form-group">
-              <input type="email" class="form-control" id="Email" placeholder="Email" autofocus required>
+              <input type="text" class="form-control" id="username" name="username1" placeholder="Username" autofocus required>
             </div>
             <div class="form-group">
-              <input type="password" class="form-control" id="Password" placeholder="Password" required>
+              <input type="password" class="form-control" id="Password" name="password1" placeholder="Password" required>
             </div>
             <button type="submit" class="btn btn-success">Sign in</button>
           </form>

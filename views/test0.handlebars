@@ -1,6 +1,7 @@
 
   <script src="/socket.io/socket.io.js"></script>
   <script type="text/javascript" async>
+
   var socket = io();
 
   function checkUnique1() {
@@ -23,6 +24,17 @@
     document.getElementById("emailExist").innerHTML = "";
   }
   </script>
+  <!-- <script type="text/javascript">
+    $("#test").pinned({
+      bounds: 100,
+      scrolling: 0,
+      mobile: false
+    });
+  </script> -->
+
+  <header class="sticky-top" style="background: yellow;">
+    <h4>This is sticky</h4>
+  </header>
 
   <div class="container">
   <form class="form-horizontal" action="/forgotPass" onsubmit="return checkUnique1()"  method="post">
@@ -52,7 +64,7 @@
   </form>
 </div>
 
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse sticky-top" data-spy="affix" data-offset-top="100" id="test">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -76,6 +88,15 @@
     </div>
   </div>
 </nav>
+
+
+<h1>jfdskljasdljfklsjafklsjafk</h1>
+<h1>jfdskljasdljfklsjafklsjafk</h1>
+<h1>jfdskljasdljfklsjafklsjafk</h1>
+<h1>jfdskljasdljfklsjafklsjafk</h1>
+<h1>jfdskljasdljfklsjafklsjafk</h1>
+<h1>jfdskljasdljfklsjafklsjafk</h1>
+<h1>jfdskljasdljfklsjafklsjafk</h1>
 
 <div class="footPos">
   {{> footer }}

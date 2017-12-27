@@ -37,6 +37,18 @@ var userSchema = mongoose.Schema({
     type: String,
     required: true,
     minlength: 6
+  },
+  token: {
+    auth: {
+      type: String
+    },
+    activeToken: {
+      type: String
+    }
+  },
+  active: {
+    type: Boolean,
+    default: false
   }
 });
 
