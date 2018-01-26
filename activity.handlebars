@@ -1,0 +1,103 @@
+{{> navbar }}
+
+
+
+<div class="container" id="compImf">
+  <div class="row">
+    <div class="modal-header">
+      <span>
+        <h3>All Activity</h3>
+      </span>
+    </div>
+
+    <div class="modal-footer">
+          <div class="col-sm-10 col-sm-offset-1">
+  		    <div class="input-group">
+                  <div class="input-group-btn search-panel">
+                      <label type="text" class="btn btn-default dropdown-toggle">
+                      	<span id="search_concept">Search</span>
+                      </label>
+
+                      <!-- <ul class="dropdown-menu" role="menu">
+                        <li><a href="#contains">Contains</a></li>
+                        <li><a href="#its_equal">It's equal</a></li>
+                        <li><a href="#greather_than">Greather than ></a></li>
+                        <li><a href="#less_than">Less than < </a></li>
+                        <li class="divider"></li>
+                        <li><a href="#all">Anything</a></li>
+                      </ul> -->
+                  </div>
+                  <input type="hidden" name="search_param" value="all" id="search_param">
+                  <input type="text" class="form-control" name="x" placeholder="Search term...">
+                  <span class="input-group-btn">
+                      <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                  </span>
+              </div>
+          </div>
+  	</div>
+  </div>
+
+<div class="col-md-12">
+  <h1>Revolution has begun!</h1>
+  <p>'I am bound to Tahiti for more men.'
+      'Very good. Let me board you a moment—I come in peace.' With that he leaped from the canoe, swam to the boat; and climbing the gunwale, stood face to face with the captain.
+      'Cross your arms, sir; throw back your head. Now, repeat after me. As soon as Steelkilt leaves me, I swear to beach this boat on yonder island, and remain there six days. If I do not, may lightning strike me!'A pretty scholar,' laughed the Lakeman. 'Adios, Senor!' and leaping into the sea, he swam back to his comrades.</p>
+  <div class="row">
+          <span class="badge">Posted By: Name</span>
+          <span class="badge">Posted: 2012-08-02 20:47:04</span>
+          <div class="pull-right" id="commentBar1"><span class="label label-default">alice</span> <span class="label label-primary">story</span> <span class="label label-success">blog</span> <span class="label label-info">personal</span> <span class="label label-warning">Warning</span>
+          <span class="label label-danger">Danger</span>
+          </div>
+  </div>
+  <hr>
+  <h1>Revolution has begun!</h1>
+  <p>'I am bound to Tahiti for more men.'
+      'Very good. Let me board you a moment—I come in peace.' With that he leaped from the canoe, swam to the boat; and climbing the gunwale, stood face to face with the captain.
+      'Cross your arms, sir; throw back your head. Now, repeat after me. As soon as Steelkilt leaves me, I swear to beach this boat on yonder island, and remain there six days. If I do not, may lightning strike me!'A pretty scholar,' laughed the Lakeman. 'Adios, Senor!' and leaping into the sea, he swam back to his comrades.</p>
+  <div class="row">
+          <span class="badge">Posted By: Name</span>
+          <span class="badge">Posted: 2012-08-02 20:47:04</span>
+          <div class="pull-right" id="commentBar2"><span class="label label-default">alice</span> <span class="label label-primary">story</span> <span class="label label-success">blog</span> <span class="label label-info">personal</span> <span class="label label-warning">Warning</span>
+          <span class="label label-danger">Danger</span>
+          </div>
+  </div>
+  <hr>
+</div>
+</div>
+
+
+<script>
+$(document).ready(function(e){
+  $('.search-panel .dropdown-menu').find('a').click(function(e) {
+  e.preventDefault();
+  var param = $(this).attr("href").replace("#","");
+  var concept = $(this).text();
+  $('.search-panel span#search_concept').text(concept);
+  $('.input-group #search_param').val(param);
+});
+});
+
+
+$( window ).on('load',function(){
+//do something
+if($(window).width() < 630){
+   $('#commentBar1').removeClass("pull-right");
+    $('#commentBar2').removeClass("pull-right");
+}
+else {
+  $('#commentBar1').addClass("pull-right");
+  $('#commentBar2').addClass("pull-right");
+}
+});
+
+$( window ).resize(function() {
+  if($(window).width() < 630){
+     $('#commentBar1').removeClass("pull-right");
+      $('#commentBar2').removeClass("pull-right");
+  }
+  else {
+    $('#commentBar1').addClass("pull-right");
+    $('#commentBar2').addClass("pull-right");
+  }
+});
+</script>

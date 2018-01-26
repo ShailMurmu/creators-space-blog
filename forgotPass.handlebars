@@ -1,0 +1,80 @@
+<script src="/socket.io/socket.io.js"></script>
+  <script type="text/javascript">
+
+  function checkUnique1() {
+    // make sure only the submit button of that form matches this selector
+    var submitButton = document.querySelector("form.form-horizontal button[value='submit']");
+    var typedEmail = document.getElementsByName("email")[0].value;
+
+    // disable the submit button upon click to prevent multiple submits
+    submitButton.disabled = true;
+
+    if (window.validatedEmail === typedEmail) {
+       // email has been validated, submit form
+       return true;
+    } else {
+      // email has not been validated, request validation
+      socket.emit('eCheck', {email: document.getElementsByName("email")[0].value});
+      socket.on('eValidateMessage', function(obj) {
+        if(obj.message == false)
+        {
+          document.getElementsByName("email")[0].style.borderColor = "#E34234";
+          document.getElementById("emailExist").innerHTML = "Email has not been registered";
+          document.getElementById("emailExist").style.color = "#E34234";
+
+          // re-enables the submit button, since the email was not validated
+          submitButton.disabled = false;
+          // clears validatedEmail (since validation failed, no email has been validated)
+          window.validatedEmail = null;
+        }
+        else {
+          // 'marks' the typed e-mail as validated
+          window.validatedEmail = typedEmail;
+
+          // make sure only that form matches this selector
+          document.querySelector("form.form-horizontal").submit();
+        }
+      });
+      return false;
+    }
+}
+
+  function emailRSet() {
+    document.getElementsByName("email")[0].style.borderColor = null;
+    document.getElementById("emailExist").innerHTML = "";
+  }
+  </script>
+
+{{> navbar }}
+
+  <div class="container" id="compImf">
+  <form class="form-horizontal" action="/forgotPass" onsubmit="return checkUnique1()"  method="post" id="formid">
+    <div class="form-group">
+      <label class="control-label col-sm-4"><h1>Creators Space</h1></label>
+      <div class="col-sm-8">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2"></label>
+      <div class="col-sm-10">
+          <label class="control-label">Please enter the email registered with Creators Space</label>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="email">Email:</label>
+      <div class="col-sm-6">
+        <input type="email" class="form-control" name="email" onclick="emailRSet()" onkeypress="emailRSet()" placeholder="Enter email" required title="email (format: xx@xx.xx/xx@xx.xx.xx)" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+        <span id="emailExist"></span>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-primary" value="submit" id="btnSubmit">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="footPos">
+  {{> footer }}
+</div>

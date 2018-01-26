@@ -1,0 +1,132 @@
+
+<!-- ========================================================================================================================== -->
+<script type="text/javascript" async>
+var socket = io();
+socket.on('Status alert', function(obj) {
+  document.getElementById("LoginErr").style.color = "#E34234";
+  document.getElementById("LoginErr").innerHTML = obj;
+});
+
+</script>
+
+
+
+<script type="text/javascript" async>
+function log() {
+  document.getElementById("LoginErr").style.color = null;
+  document.getElementById("LoginErr").innerHTML = "";
+  document.getElementsByName("username1")[0].style.borderColor = null;
+  document.getElementsByName("password1")[0].style.borderColor = null;
+}
+
+</script>
+
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigate2">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-2">
+ <span class="sr-only">Toggle navigation</span>
+ <span class="icon-bar"></span>
+ <span class="icon-bar"></span>
+ <span class="icon-bar"></span>
+</button>
+      <a class="navbar-brand" href="#home-section">Creators Space</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="navbar-collapse-2">
+    {{#if token}}
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#">Activity</a></li>
+      <li><a href="#">Profile</a></li>
+      <li>
+        <form id="logoutForm" method="post" action="/logout">
+        <label id="logoutBtn" class="btn btn-default btn-outline btn-circle">Logout</label>
+      </form>
+      </li>
+    </ul>
+      {{else}}
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/">Home</a></li>
+        <li><a href="#developerId">Contact us</a></li>
+        <li><a href="#signup-innerId">Sign up</a></li>
+        <li>
+          <label id="signinBtn" class="btn btn-default btn-outline btn-circle" data-toggle="modal" data-target="#exampleModal" href="">Sign in</label>
+        </li>
+      </ul>
+      {{/if}}
+    </div>
+    <!-- /.container -->
+</nav>
+<!-- /.navbar -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel">Creators Space</h3>
+        <button type="button" class="close" id="closeBtn" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+      </div>
+      <div id="login-form">
+        <form class="navbar-form navbar-center form-inline" action="/login" method="post" id="login-elem" align="center" role="form">
+          <div class="form-group">
+            <input type="text" class="form-control" onkeypress="log()" onclick="log()" id="username" name="username1" placeholder="Username" autofocus required>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" onkeypress="log()" onclick="log()" id="Password" name="password1" placeholder="Password" required>
+          </div>
+          <button type="submit" id="loginF" class="btn btn-success" >Sign in</button>
+        </form>
+        <a href="./forgotPass" id="ForgotPass">Forgot Password?</a>
+
+      </div>
+      <div class="modal-footer">
+        <span id="LoginErr"></span>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+$(document).ready(function(){
+$('#loginF').click(function(event){
+event.preventDefault();
+socket.emit('loginCheck', {username: document.getElementsByName("username1")[0].value, password: document.getElementsByName("password1")[0].value});
+socket.on('loginCheck', function(obj) {
+if(obj.path){
+  $("#login-elem").submit();
+} else {
+  document.getElementById("LoginErr").style.color = "#E34234";
+  document.getElementById("LoginErr").innerHTML = obj.message;
+  document.getElementsByName("username1")[0].value = "";
+  document.getElementsByName("password1")[0].value = "";
+  document.getElementsByName("username1")[0].style.borderColor = "#E34234";
+  document.getElementsByName("password1")[0].style.borderColor = "#E34234";
+  $('#loginF').reset();
+}
+});
+
+});
+});
+
+$("#logoutBtn").click(function(){
+$("#logoutForm").submit();
+});
+
+
+$( "#signinBtn" ).click(function(){
+document.getElementById("LoginErr").innerHTML = null;
+document.getElementsByName("username1")[0].value = "";
+document.getElementsByName("password1")[0].value = "";
+document.getElementsByName("username1")[0].style.borderColor = null;
+document.getElementsByName("password1")[0].style.borderColor = null;
+});
+</script>
